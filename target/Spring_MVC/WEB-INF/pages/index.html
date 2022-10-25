@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Все люди</title>
 </head>
 <body>
-<div>
-    <th:block th:each="msg : ${messages}">
-        <h1 th:text="${msg}"></h1>
-    </th:block>
-</div>
+<div th:each="person : ${user}">
+    <a th:text="${user.getId()}">user</a>
+    <a th:href="@{/show/{id}(id=${user.getId()})}" th:text="${user.getName()}">user</a>
+    <a th:text="${user.getSurName()}">user</a>
+</div>>
+
 </body>
 </html>
